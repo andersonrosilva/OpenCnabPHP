@@ -22,13 +22,13 @@ class Registro2 extends Generico2
             'tipo'=>'date',
             'required'=>true),
         'vlr_multa'=>array(            //29.3P
-            'tamanho'=>13,
+            'tamanho'=>11,
             'default'=>'0',
             'tipo'=>'decimal',
             'precision'=>2,
             'required'=>true),
         'filler2'=>array(            //32.3P
-            'tamanho'=>370, 
+            'tamanho'=>371, 
             'default'=>' ',
             'tipo'=>'alfa',
             'required'=>true),

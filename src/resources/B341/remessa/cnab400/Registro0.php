@@ -122,8 +122,26 @@ class Registro0 extends Generico0
             $class = 'CnabPHP\resources\\B' . RemessaAbstract::$banco . '\remessa\\' . RemessaAbstract::$layout . '\Registro1_2D';
             $this->children[] = new $class($data);
         } else {
-            $class = 'CnabPHP\resources\\B' . RemessaAbstract::$banco . '\remessa\\' . RemessaAbstract::$layout . '\Registro1';
-            $this->children[] = new $class($data);
+            
+           
+            if ( $data['codigo_movimento'] === 1 ) {
+                $class = 'CnabPHP\resources\\B' . RemessaAbstract::$banco . '\remessa\\' . RemessaAbstract::$layout . '\Registro1';
+                $this->children[] = new $class($data);
+            }
+            
+          
+            if (array_key_exists('email', $data)) {
+
+                $class = 'CnabPHP\resources\\B' . RemessaAbstract::$banco . '\remessa\\' . RemessaAbstract::$layout . '\Registro5';
+                $this->children[] = new $class($data);
+            }
+
+
+            if (array_key_exists('data_multa', $data)) {
+            
+                $class = 'CnabPHP\resources\\B' . RemessaAbstract::$banco . '\remessa\\' . RemessaAbstract::$layout . '\Registro2';
+                $this->children[] = new $class($data);
+            }
         }
     }
 }
